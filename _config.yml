@@ -5,6 +5,7 @@ timezone: UTC
 permalink: /:categories/:year/:month/:day/:title/
 plugins:
   - jekyll-feed
+future: true
 
 # Branding
 logo: /assets/img/logo.svg
