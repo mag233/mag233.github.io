@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="hero__content">
+    <p class="hero__kicker">{{ site.description }}</p>
+    <h1 class="hero__title">{{ site.title }}</h1>
+    <p class="hero__subtitle">Search posts, browse by category, and pick up where you left off.</p>
+    <div class="hero__search">
+      <label class="sr-only" for="searchInput">Search</label>
+      <input id="searchInput" class="input" type="search" placeholder="Search posts…" autocomplete="off" />
+      <div id="searchResults" class="search-results" aria-live="polite"></div>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Categories">
+      <button class="tab is-active" type="button" data-category="__all__" role="tab" aria-selected="true">All</button>
+      {% assign categories_sorted = site.categories | sort %}
+      {% for cat in categories_sorted %}
+        {% assign name = cat[0] %}
+        <button class="tab" type="button" data-category="{{ name | escape }}" role="tab" aria-selected="false">{{ name }}</button>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="hero__art" aria-hidden="true">
+    <div class="art art--card"></div>
+    <div class="art art--ring"></div>
+    <div class="art art--dots"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section__header">
+    <h2 class="section__title">Latest</h2>
+    <a class="link" href="{{ '/categories/' | relative_url }}">Browse categories</a>
+  </div>
+
+  <ul id="postList" class="post-grid">
+    {% for post in site.posts %}
+      <li class="post-card" data-categories="{{ post.categories | join: '|' | escape }}">
+        <a class="post-card__link" href="{{ post.url | relative_url }}">
+          <div class="post-card__meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+          </div>
+          <h3 class="post-card__title">{{ post.title }}</h3>
+          <p class="post-card__excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}</p>
+          {% if post.categories and post.categories.size > 0 %}
+            <div class="chips" aria-label="Categories">
+              {% for c in post.categories %}
+                <span class="chip">{{ c }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

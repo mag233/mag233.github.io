@@ -1,1 +1,13 @@
 theme: minima
+title: mag233
+description: Notes on learning, AI agents, and global health.
+timezone: UTC
+permalink: /:categories/:year/:month/:day/:title/
+plugins:
+  - jekyll-feed
+
+# Branding
+logo: /assets/img/logo.svg
+
+# Optional: set this when you know it (e.g., https://mag233.github.io)
+url: ""

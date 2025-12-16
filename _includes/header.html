@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      {% if site.logo %}
+        <img class="brand__logo" src="{{ site.logo | relative_url }}" alt="{{ site.title }} logo" />
+      {% endif %}
+      <span class="brand__text">{{ site.title }}</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+      <a class="nav__link{% if page.url contains '/categories' %} is-active{% endif %}" href="{{ '/categories/' | relative_url }}">Categories</a>
+      <a class="nav__link{% if page.url contains '/about' %} is-active{% endif %}" href="{{ '/about/' | relative_url }}">About</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article class="prose">
+  <header class="post-header">
+    <a class="link" href="{{ '/' | relative_url }}">← Home</a>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {% if page.categories and page.categories.size > 0 %}
+        <span class="muted">·</span>
+        <span class="muted">
+          {% for c in page.categories %}
+            <a class="chip chip--link" href="{{ '/categories/' | relative_url }}#{{ c | slugify }}">{{ c }}</a>
+          {% endfor %}
+        </span>
+      {% endif %}
+    </div>
+  </header>
+  {{ content }}
+</article>
