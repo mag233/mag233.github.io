@@ -1,6 +1,6 @@
 theme: minima
-title: mag233
-brand_name: mag233
+title: Mag
+brand_name: Mag Shipwrack
 description: Notes on learning, AI agents, and global health.
 timezone: UTC
 permalink: /:categories/:year/:month/:day/:title/
@@ -9,6 +9,15 @@ plugins:
 future: true
 exclude:
   - templates
+
+# Defaults to reduce per-post front matter
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      lang: en
 
 # Branding
 logo: /assets/img/logo-256.png
