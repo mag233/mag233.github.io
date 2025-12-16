@@ -292,3 +292,47 @@ body{
   box-shadow: var(--shadow);
   object-fit: cover;
 }
+
+.about{padding: 10px 0 34px}
+.about__card{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--panel) 86%, transparent);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+.about__header{
+  display:flex;
+  gap: 16px;
+  align-items:center;
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 92%, transparent), color-mix(in srgb, var(--panel2) 86%, transparent));
+}
+@media (max-width: 720px){.about__header{align-items:flex-start}}
+.about__avatar{
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 24px rgba(0,0,0,.20);
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+.about__name{margin:0; line-height:1.15}
+.about__tagline{margin: 6px 0 10px; color: var(--muted)}
+.about__chips{display:flex; gap:8px; flex-wrap:wrap}
+
+.about__grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 14px 18px 18px;
+}
+@media (max-width: 860px){.about__grid{grid-template-columns: 1fr}}
+.about__panel{
+  border:1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--panel2) 90%, transparent);
+  padding: 12px 14px;
+}
