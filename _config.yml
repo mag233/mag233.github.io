@@ -10,7 +10,7 @@ exclude:
   - templates
 
 # Branding
-logo: /assets/img/logo.svg
+logo: /assets/img/logo-256.png
 
 # Optional: set this when you know it (e.g., https://mag233.github.io)
 url: ""

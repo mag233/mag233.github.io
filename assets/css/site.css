@@ -79,7 +79,7 @@ body{
   content:"";
   position:absolute;
   inset:-2px;
-  background-image: url("../img/hero.svg");
+  background-image: url("../img/hero-1920.jpg");
   background-size: cover;
   background-position: center;
   opacity: .55;
@@ -283,3 +283,12 @@ body{
   background: color-mix(in srgb, var(--panel2) 92%, transparent);
 }
 .prose code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+
+.avatar{
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
