@@ -6,9 +6,14 @@ permalink: /:categories/:year/:month/:day/:title/
 plugins:
   - jekyll-feed
 future: true
+exclude:
+  - templates
 
 # Branding
 logo: /assets/img/logo.svg
 
 # Optional: set this when you know it (e.g., https://mag233.github.io)
 url: ""
+
+# Optional local writing helper page at /write/
+show_write: false

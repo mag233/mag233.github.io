@@ -10,6 +10,9 @@
       <a class="nav__link{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
       <a class="nav__link{% if page.url contains '/categories' %} is-active{% endif %}" href="{{ '/categories/' | relative_url }}">Categories</a>
       <a class="nav__link{% if page.url contains '/about' %} is-active{% endif %}" href="{{ '/about/' | relative_url }}">About</a>
+      {% if site.show_write %}
+        <a class="nav__link{% if page.url contains '/write' %} is-active{% endif %}" href="{{ '/write/' | relative_url }}">Write</a>
+      {% endif %}
     </nav>
   </div>
 </header>
