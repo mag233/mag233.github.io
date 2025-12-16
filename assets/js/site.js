@@ -20,7 +20,15 @@
         li.hidden = false;
         return;
       }
-      const cats = (li.getAttribute("data-categories") || "").split("|").map((c) => c.trim());
+      const raw = li.getAttribute("data-categories") || "[]";
+      let cats = [];
+      try {
+        cats = JSON.parse(raw);
+      } catch (_e) {
+        cats = raw.split("|");
+      }
+      if (typeof cats === "string") cats = [cats];
+      cats = (cats || []).map((c) => String(c).trim()).filter(Boolean);
       li.hidden = !cats.includes(category);
     });
   }
@@ -101,7 +109,15 @@
           const posts = await searchIndexPromise;
           const hits = posts
             .map((p) => {
-              const hay = normalize(p.title) + "\n" + normalize(p.excerpt) + "\n" + normalize(p.content) + "\n" + normalize((p.categories || []).join(" "));
+              const catList = Array.isArray(p.categories) ? p.categories : p.categories ? [p.categories] : [];
+              const hay =
+                normalize(p.title) +
+                "\n" +
+                normalize(p.excerpt) +
+                "\n" +
+                normalize(p.content) +
+                "\n" +
+                normalize(catList.join(" "));
               const idx = hay.indexOf(lastQuery);
               return idx === -1 ? null : { p, idx };
             })

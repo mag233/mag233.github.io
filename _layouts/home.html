@@ -20,6 +20,21 @@ layout: default
         <button class="tab" type="button" data-category="{{ name | escape }}" role="tab" aria-selected="false">{{ name }}</button>
       {% endfor %}
     </div>
+
+    <div class="stats" aria-label="Site statistics">
+      <div class="stat">
+        <div class="stat__value">{{ site.posts | size }}</div>
+        <div class="stat__label">Posts</div>
+      </div>
+      <div class="stat">
+        <div class="stat__value">{{ site.categories | size }}</div>
+        <div class="stat__label">Categories</div>
+      </div>
+      <div class="stat">
+        <div class="stat__value">{{ site.posts.first.date | date: "%Y-%m-%d" }}</div>
+        <div class="stat__label">Latest</div>
+      </div>
+    </div>
   </div>
   <div class="hero__art" aria-hidden="true">
     <div class="art art--card"></div>
@@ -36,7 +51,7 @@ layout: default
 
   <ul id="postList" class="post-grid">
     {% for post in site.posts %}
-      <li class="post-card" data-categories="{{ post.categories | join: '|' | escape }}">
+      <li class="post-card" data-categories='{{ post.categories | jsonify | escape }}'>
         <a class="post-card__link" href="{{ post.url | relative_url }}">
           <div class="post-card__meta">
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>

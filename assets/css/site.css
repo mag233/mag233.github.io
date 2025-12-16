@@ -1,12 +1,12 @@
 :root{
-  --bg:#0b1020;
-  --panel:#0f1730;
-  --panel2:#0c132a;
-  --text:#e9ecf3;
-  --muted:#a8b0c4;
+  --bg:#06110d;
+  --panel:#0b1a14;
+  --panel2:#081611;
+  --text:#eaf3ee;
+  --muted:#a9c0b4;
   --line:rgba(255,255,255,.10);
-  --brand:#7c5cff;
-  --brand2:#18d1ff;
+  --brand:#2fa36b;
+  --brand2:#7ccfb0;
   --shadow: 0 10px 30px rgba(0,0,0,.25);
   --radius: 16px;
   --container: 1060px;
@@ -14,12 +14,12 @@
 
 @media (prefers-color-scheme: light){
   :root{
-    --bg:#f6f7fb;
+    --bg:#f3f7f5;
     --panel:#ffffff;
     --panel2:#ffffff;
-    --text:#0e1325;
-    --muted:#4b546b;
-    --line:rgba(14,19,37,.12);
+    --text:#0a1611;
+    --muted:#3a5a4b;
+    --line:rgba(10,22,17,.12);
     --shadow: 0 10px 30px rgba(10,15,30,.12);
   }
 }
@@ -31,8 +31,8 @@ body{
   font: 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
   color:var(--text);
   background:
-    radial-gradient(1200px 600px at 10% 0%, rgba(124,92,255,.25), transparent 55%),
-    radial-gradient(1000px 500px at 100% 20%, rgba(24,209,255,.18), transparent 50%),
+    radial-gradient(1200px 600px at 10% 0%, rgba(47,163,107,.22), transparent 55%),
+    radial-gradient(1000px 500px at 100% 20%, rgba(124,207,176,.16), transparent 50%),
     var(--bg);
 }
 
@@ -158,6 +158,17 @@ body{
 }
 .tab:hover{color:var(--text); background: color-mix(in srgb, var(--panel) 86%, transparent)}
 .tab.is-active{color:var(--text); border-color: color-mix(in srgb, var(--brand) 45%, var(--line)); background: color-mix(in srgb, var(--panel) 92%, transparent)}
+
+.stats{display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px}
+.stat{
+  border:1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--panel) 82%, transparent);
+  min-width: 140px;
+}
+.stat__value{font-weight:800; letter-spacing:.2px}
+.stat__label{color:var(--muted); font-size: 13px}
 
 .section{padding: 18px 0 34px}
 .section__header{display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom: 10px}
