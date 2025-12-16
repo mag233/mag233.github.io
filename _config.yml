@@ -1,5 +1,6 @@
 theme: minima
 title: mag233
+brand_name: mag233
 description: Notes on learning, AI agents, and global health.
 timezone: UTC
 permalink: /:categories/:year/:month/:day/:title/

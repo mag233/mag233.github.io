@@ -5,7 +5,7 @@ layout: default
 <section class="hero">
   <div class="hero__content">
     <p class="hero__kicker">{{ site.description }}</p>
-    <h1 class="hero__title">{{ site.title }}</h1>
+    <h1 class="hero__title">{{ site.brand_name | default: site.title }}</h1>
     <p class="hero__subtitle">Search posts, browse by category, and pick up where you left off.</p>
     <div class="hero__search">
       <label class="sr-only" for="searchInput">Search</label>

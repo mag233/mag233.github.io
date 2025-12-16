@@ -2,9 +2,9 @@
   <div class="container site-header__inner">
     <a class="brand" href="{{ '/' | relative_url }}">
       {% if site.logo %}
-        <img class="brand__logo" src="{{ site.logo | relative_url }}" alt="{{ site.title }} logo" />
+        <img class="brand__logo" src="{{ site.logo | relative_url }}" alt="{{ site.brand_name | default: site.title }} logo" />
       {% endif %}
-      <span class="brand__text">{{ site.title }}</span>
+      <span class="brand__text">{{ site.brand_name | default: site.title }}</span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a class="nav__link{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
